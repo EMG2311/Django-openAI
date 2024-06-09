@@ -1,0 +1,11 @@
+Given the technology name {skill}, provide a list of prerequisite skills one should have before starting to learn the technology, as well as the skills specific to the technology itself. The list should include different levels of skills, starting from the most fundamental ones to the more advanced ones that are directly related to the given technology.
+
+The list should contain dependencies between the skills listed.
+
+The output should be in the following JSON format:
+
+```
+{{
+    "<skill name>": [<list of prerequisite skills>]
+}}
+```

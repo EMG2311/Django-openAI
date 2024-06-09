@@ -1,0 +1,19 @@
+Create an entertaining and easy-to-understand point-based learning material on '{skill}'. The content should cover key aspects, basic components, and fundamental principles. After the learning material, develop engaging multiple-choice questions to assess the user's comprehension and mastery of '{skill}'. Provide the correct answers at the end.
+
+The output should be in JSON format, following the template below. Format the strings as {display_format}:
+
+```
+{{
+    "learning_material": "<learning material formatted in HTML>",
+    "questions": [
+        {{
+            "question": "<question in HTML>",
+            "options": [
+                "<option 1 formatted in HTML>",
+                ...
+            ],
+            "answer": <correct option's 1-based index>
+        }}
+    ]
+}}
+```

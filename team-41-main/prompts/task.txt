@@ -1,0 +1,11 @@
+Create a fun and simple coding task that incorporates the technology '{skill}' and relates to at least one of the following interests: [{interests}].
+
+The output should be in JSON format, the string literals should be formatted in {display_format}:
+
+```
+{{
+    "title": "<task title>",
+    "description": "<task description>",
+    "requirements": "<task requirements>"
+}}
+```

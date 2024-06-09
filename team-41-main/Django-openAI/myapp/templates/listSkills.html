@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Bootstrap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Distill the skills you know</h2>
+        <form method="post" action="taskForSkill">
+            {% csrf_token %}
+            {% for category, subcategories in content.items %}
+                <div class="card mb-3 ">
+                    <div class="card-header bg-primary text-white">
+                        {{ category }}
+                    </div>
+                    <div class="card-body">
+                        {% for subcategory, skills in subcategories.items %}
+                            <h5 class="card-title">{{ subcategory }}</h5>
+                            <div class="form-check">
+                                {% for skill in skills %}
+                                    <input class="form-check-input" type="checkbox" id="{{ skill }}" name="skills" value="{{ skill }}" checked>
+                                    <label class="form-check-label" for="{{ skill }}">{{ skill }}</label><br>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Ok</button>
+        </form>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
