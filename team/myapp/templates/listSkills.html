@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list Checkboxes</title>
+</head>
+<body>
+    <h2>distill the ones you already know:</h2>
+    <form method="post" action="/taskForSkill">
+        {% csrf_token %}
+        <ul>
+            {% for item in items %}
+            <li>
+                <input type="checkbox" id="{{ item }}" name="selected_items" value="{{ item }}" checked>
+                <label for="{{ item }}">{{ item }}</label>
+            </li>
+            {% endfor %}
+        </ul>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

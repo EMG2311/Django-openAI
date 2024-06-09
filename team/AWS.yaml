@@ -1,0 +1,52 @@
+```yaml
+AWS:
+  Prerequisite Skills:
+    Basic Computer Skills:
+      - Using an Operating System
+      - Basic Troubleshooting
+    Basic Internet Skills:
+      - Web Browsing
+      - Email Communication
+      - Online Research
+    Programming Fundamentals:
+      - Understanding of Data Types
+      - Control Structures
+      - Basic Algorithmic Thinking
+    Networking Basics:
+      - Understanding of IP Addresses
+      - Understanding of DNS
+      - Basic Knowledge of HTTP/HTTPS
+    Database Basics:
+      - Understanding of SQL
+      - Basic Knowledge of Database Design
+    Linux Basics:
+      - Basic Command Line Skills
+      - File and Directory Management
+      - Process Management
+  AWS Specific Skills:
+    AWS Basics:
+      - Understanding of AWS Global Infrastructure
+      - Knowledge of AWS Management Console
+      - Understanding of AWS Pricing and Billing
+    AWS Core Services:
+      - EC2
+      - S3
+      - VPC
+      - IAM
+      - RDS
+      - DynamoDB
+    AWS Developer Tools:
+      - AWS CLI
+      - AWS SDKs
+      - AWS CloudFormation
+    AWS Architecting:
+      - Designing Highly Available, Cost-efficient, Fault-tolerant, Scalable Systems
+      - Data Security Practices
+      - Disaster Recovery Strategies
+    AWS Advanced Services:
+      - AWS Lambda
+      - AWS Elastic Beanstalk
+      - AWS Kinesis
+      - AWS Redshift
+      - AWS Machine Learning Services
+```
