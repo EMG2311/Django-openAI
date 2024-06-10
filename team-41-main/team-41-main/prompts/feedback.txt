@@ -1,39 +1,44 @@
-***Task title:** {title}
+Task title: {title}
  
-**Task description:** {description}
+Task description: {description}
  
-**Task requirements:** {requirements}
+Task requirements: {requirements}
  
-**User's Code:**
+User's Code:
+
 ```
 {code}
 ```
 
-**Instructions for ChatGPT:**
+---
 
-1. **Code Review:**
+Instructions for ChatGPT:
+
+1. Code Review:
    - Analyze the provided code for correctness based on the given task details.
    - Identify any syntax errors, logical errors, or potential bugs.
    - Check for adherence to best practices and coding standards relevant to the specified technology.
 
-2. **Constructive Feedback:**
+2. Constructive Feedback:
    - Provide specific feedback on what is done well in the code.
    - Highlight areas that need improvement or correction.
    - Suggest any optimizations or alternative approaches that could enhance the code's performance or readability.
    - If applicable, provide code snippets or examples to illustrate your suggestions.
 
-3. **Additional Considerations:**
+3. Additional Considerations:
    - Ensure the feedback is clear, concise, and easy to understand.
    - Be polite and encouraging, focusing on helping the user improve their skills.
 
-**Example Output:**
+4. The following example is in markdown format. But the output must be in {display_format} format. Please convert it to the desired format.
 
-**Code Review:**
+---
+
+Example Output:
+
+Code Review:
 - [Detailed analysis of the code]
 
-**Constructive Feedback:**
+Constructive Feedback:
 - [Positive feedback]
 - [Areas for improvement]
 - [Suggestions for optimization or alternative approaches]
-
-Output should be in {display_format} format.

@@ -1,11 +1,16 @@
-import AiClient
+from typing import Dict, List
+import AiClient as AiClient
 
 
 class SkillTree:
-    def __init__(self, ai_client: AiClient, target_skill: str):
+    def __init__(self, ai_client: AiClient, target_skill: str, skills_to_dependencies: Dict[str, List[str]] = None):
         self.target_skill = target_skill
-        self.skills_to_dependencies = ai_client.generate('skills', skill=target_skill)
-        self.__remove_skills_without_refernces()
+        if skills_to_dependencies:
+            self.skills_to_dependencies = skills_to_dependencies
+        else:
+            self.skills_to_dependencies: Dict[str, List[str]] = ai_client.generate('skills', skill=target_skill)
+            self.__remove_skills_without_refernces()
+        self.__remove_references_to_non_existing_skills()
     
     def get_dependencies(self, skill: str) -> list:
         if skill not in self.skills_to_dependencies:
@@ -41,3 +46,9 @@ class SkillTree:
                 if skill not in skills_with_references:
                     del self.skills_to_dependencies[skill]
                     repeat_required = True
+    
+    def __remove_references_to_non_existing_skills(self) -> None:
+        for dependencies in self.skills_to_dependencies.values():
+            for skill in list(dependencies):
+                if skill not in self.skills_to_dependencies:
+                    dependencies.remove(skill)

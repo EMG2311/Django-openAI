@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz for skill {{skill}}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        {%if correct_number %}
+        <div class="alert {%if correct %} alert-success {%else%} alert-danger {%endif%}" role="alert">
+            {%if correct %}
+                Correct!
+            {%else%}
+                Incorrect!
+            {%endif%}
+            The answer is {{correct_number}}: <em>{{correct_answer | safe}}</em>
+        </div>
+        {%endif%}
+
+        {%if quiz %}
+        <h1>Question {{question_number}} for skill {{skill}}</h1>
+        
+        <form method="post" action="/learn/quiz?skill={{skill}}&question={{question_number|add:1}}">
+            {% csrf_token %}
+            <p>{{ quiz.question | safe }}</p>
+            {% for option in quiz.options %}
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="answer{{ forloop.counter }}" name="answer" value="{{ forloop.counter }}">
+                <label class="form-check" for="answer{{ forloop.counter }}">{{ option | safe }}</label>
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        {%else%}
+        <h1>Quiz for skill {{skill}} is completed!</h1>
+        {%endif%}
+
+        <a href="/learn/task?skill={{skill}}" class="btn btn-primary">Coding task</a>
+        <a href="/learn/theory?skill={{skill}}" class="btn btn-primary">Learning material</a>
+        <a href="/roadmap" class="btn btn-primary">Back to roadmap</a>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

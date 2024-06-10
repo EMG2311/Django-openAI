@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="text-center">
+            <form action="/showKnownSkillsForm">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="skill">The skill you want to learn:</label>
+                    <input type="text" class="form-control-sm text-center" name="skill" id="skill" placeholder="Enter a skill">
+                </div>
+                <div class="form-group">
+                    <label for="interests">Your interests:</label>
+                    <input type="text" class="form-control-sm text-center" name="interests" id="interests" placeholder="Enter your interests">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

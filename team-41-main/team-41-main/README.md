@@ -30,3 +30,8 @@ For example, the task could be a simple game
 or an interactive storytelling app
 Compete with other users
 Assign badges or points for user to motivate learning more
+
+
+**Steps to run the code**
+1. Run the command in the project root: python manage.py runserver
+2. Follow this link: http://127.0.0.1:8000/

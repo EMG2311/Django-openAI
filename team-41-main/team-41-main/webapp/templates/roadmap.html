@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-4">Learning roadmap</h1>
+        <table class="table table-striped">
+            <thead class="thead-dark"></thead>
+                <tr>
+                    <th>Skill</th>
+                    <th>Blockers</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for skill, blockers in content.items %}
+                <tr>
+                    <td><a href="/learn/theory?skill={{ skill }}">{{ skill }}</a></td>
+                    <td>
+                        {% if blockers %}
+                            {{ blockers|join:", " }}
+                        {% else %}
+                            <span class="text-success">Ready to learn</span>
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
